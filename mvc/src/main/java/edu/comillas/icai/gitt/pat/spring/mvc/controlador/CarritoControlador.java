@@ -39,13 +39,12 @@ public class CarritoControlador {
         carritos.remove(idCarrito);
     }
 
-//    @PutMapping("/api/contadores/{nombre}/incremento/{incremento}")
-//    public ModeloContador incrementa(@PathVariable String nombre,
-//                                     @PathVariable Integer incremento) {
-//        ModeloContador contadorActual = contadores.get(nombre);
-//        ModeloContador contadorIncrementado =
-//                new ModeloContador(nombre, contadorActual.valor() + incremento);
-//        contadores.put(nombre, contadorIncrementado);
-//        return contadorIncrementado;
-//    }
+    //modificar carrito
+    @PostMapping("/api/carrito/{idCarrito}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Carrito modificaCarrito(@PathVariable int idCarrito, @RequestBody Carrito carrito) {
+        carritos.put(idCarrito, carrito);
+        return carrito;
+    }
+
 }
