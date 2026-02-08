@@ -34,15 +34,16 @@ Creamos una clase ``ControladorCarrito`` donde implementamos los métodos que no
 #### Leer lista de todos los carritos (Read --> get)
 usamos la anotacion ``@GetMapping`` 
 Demo del get:
-![[Pasted image 20260208211226.png|200]]
+![alt text](imagenes/cap1.png)
+
 #### Crear carrito (Create --> put)
 eliminamos demo y probamos a crear un carrito con la anotacion ``@PostMapping``
 y Postman.
-![[Pasted image 20260208212309.png|200]]
+![alt text](imagenes/cap2.png)
 con la anotacion estamos diciendo que el request body es de tipo carrito y spring va a mapear a un formato json las propiedades de carrito. para que funcione en Postman creamos nuestro body en dicho formato.
 Ahora vemos que si hacemos un get, nos sale el carrito que hemos creado:
-![[Pasted image 20260208212559.png|200]]
+![alt text](imagenes/cap3.png)
 #### Leer un solo carrito
 implementamos un nuevo metodo con ``@GetMapping`` para obtener un carrito creado de nuestra lista de carritos mediante su ``idCarrito``
 Para ver esto en Postman tenemos que hacer un POST de un carrito (porque no tenemos persistencia) y luego creando una nueva peticion GET obtenemos nuestro carrito creado. 
-![[Pasted image 20260208214147.png|200]]
+![alt text](imagenes/cap4.png)
