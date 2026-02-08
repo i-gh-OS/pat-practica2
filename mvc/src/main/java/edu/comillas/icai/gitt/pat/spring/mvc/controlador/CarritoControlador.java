@@ -34,6 +34,10 @@ public class CarritoControlador {
         return carritos.get(idCarrito);
     }
 
+    @DeleteMapping("/api/carrito/{idCarrito}")
+    public void borrarCarrito(@PathVariable int idCarrito) {
+        carritos.remove(idCarrito);
+    }
 
 //    @PutMapping("/api/contadores/{nombre}/incremento/{incremento}")
 //    public ModeloContador incrementa(@PathVariable String nombre,
