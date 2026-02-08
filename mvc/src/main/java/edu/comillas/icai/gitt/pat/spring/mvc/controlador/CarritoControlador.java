@@ -14,19 +14,26 @@ public class CarritoControlador {
 
     //ahora importamos las peticiones que tenemos que hacer
 
-    //GET
+    //leer todos los carritos
     @GetMapping("/api/carrito")
     public Collection<Carrito> getCarritos() {
         return carritos.values();
     }
 
+    //crear un carrito
     @PostMapping("/api/carrito")
     @ResponseStatus(HttpStatus.CREATED)
     public Carrito creaCarrito(@RequestBody Carrito carrito) {
         carritos.put(carrito.getIdCarrito(), carrito);
         return carrito;
     }
-    //request body es de tipo carrito y spring va a mapear a un formato json las propiedades de carrito
+
+    //leer un carrito especifico
+    @GetMapping("/api/carrito/{idCarrito}")
+    public Carrito getCarrito(@PathVariable int idCarrito) {
+        return carritos.get(idCarrito);
+    }
+
 
 //    @PutMapping("/api/contadores/{nombre}/incremento/{incremento}")
 //    public ModeloContador incrementa(@PathVariable String nombre,
