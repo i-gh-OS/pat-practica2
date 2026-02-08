@@ -1,3 +1,13 @@
+# Práctica 2
+
+**Nombre:** Irene Morales Pérez
+
+**Curso:** 3º GITT+BA 
+
+**Fecha:** 17/01/2026
+
+---
+
 ## Especificaciones
 ### Objetivo de la práctica
 
@@ -14,6 +24,8 @@ Se implementará un recurso **Carrito** que representa el estado de una compra
 - **precioFinal**: importe final del carrito (para simplificar, se considera un campo proporcionado/calculado y se devuelve en las respuestas).
     
 > Simplificación: **cada carrito solo puede contener un único producto** (no existe lista de líneas).
+
+---
 
 ## Implementación
 ### 1. Creacion del proyecto
@@ -47,3 +59,11 @@ Ahora vemos que si hacemos un get, nos sale el carrito que hemos creado:
 implementamos un nuevo metodo con ``@GetMapping`` para obtener un carrito creado de nuestra lista de carritos mediante su ``idCarrito``
 Para ver esto en Postman tenemos que hacer un POST de un carrito (porque no tenemos persistencia) y luego creando una nueva peticion GET obtenemos nuestro carrito creado. 
 ![alt text](imagenes/cap4.png)
+#### Quitar carrito (Delete --> delete)
+implementamos un nuevo metodo con ``@DeleteMapping`` que devuelva un carrito especifico indicado con el idCarrito.
+Lo probamos en postman creando dos carritos y borrando uno de ellos.
+#### Modificar cualquier cosa del carrito (Update --> put)
+Hacemos un nuevo metodo con ``@PutMapping`` pero ahora el path recibe el id del carrito que se quiere modificar.
+
+
+
